@@ -1,0 +1,521 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/space_pic"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/hearts_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true">
+        <ImageView
+            android:contentDescription="@string/hp"
+            android:id="@+id/heart1"
+            android:layout_width="@dimen/heart_size"
+            android:layout_height="@dimen/heart_size"
+            android:src="@drawable/heart"
+            android:layout_marginStart="4dp"/>
+        <ImageView
+            android:contentDescription="@string/hp"
+            android:id="@+id/heart2"
+            android:layout_width="@dimen/heart_size"
+            android:layout_height="@dimen/heart_size"
+            android:src="@drawable/heart"
+            android:layout_marginStart="4dp"/>
+        <ImageView
+            android:contentDescription="@string/hp"
+            android:id="@+id/heart3"
+            android:layout_width="@dimen/heart_size"
+            android:layout_height="@dimen/heart_size"
+            android:src="@drawable/heart"
+            android:layout_marginStart="4dp"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txt_distance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="0"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"/>
+
+    <TextView
+        android:id="@+id/txt_coins"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="56dp"
+        android:text="0"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"/>
+
+
+    <GridLayout
+        android:id="@+id/obstacle_grid"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@id/hearts_container"
+        android:layout_above="@id/left_arrow_button"
+        android:layout_marginBottom="16dp"
+        android:layout_marginTop="16dp"
+        android:columnCount="5"
+        android:rowCount="8"
+        android:padding="16dp">
+
+        <ImageView
+            android:contentDescription="@string/obstacle"
+            android:id="@+id/mat_cell_1"
+            android:src="@drawable/ufo"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1" />
+
+        <ImageView
+            android:contentDescription="@string/obstacle"
+            android:id="@+id/mat_cell_2"
+            android:src="@drawable/ufo"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1" />
+
+        <ImageView
+            android:contentDescription="@string/obstacle"
+            android:id="@+id/mat_cell_3"
+            android:src="@drawable/ufo"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1" />
+
+        <ImageView
+            android:contentDescription="@string/obstacle"
+            android:id="@+id/mat_cell_4"
+            android:src="@drawable/ufo"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1" />
+
+        <ImageView
+            android:contentDescription="@string/obstacle"
+            android:id="@+id/mat_cell_5"
+            android:src="@drawable/ufo"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1" />
+
+        <ImageView
+            android:contentDescription="@string/obstacle"
+            android:id="@+id/mat_cell_6"
+            android:src="@drawable/ufo"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1" />
+
+        <ImageView
+            android:contentDescription="@string/obstacle"
+            android:id="@+id/mat_cell_7"
+            android:src="@drawable/ufo"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1" />
+
+        <ImageView
+            android:contentDescription="@string/obstacle"
+            android:id="@+id/mat_cell_8"
+            android:src="@drawable/ufo"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1" />
+
+        <ImageView
+            android:contentDescription="@string/obstacle"
+            android:id="@+id/mat_cell_9"
+            android:src="@drawable/ufo"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1" />
+
+        <ImageView
+            android:contentDescription="@string/obstacle"
+            android:id="@+id/mat_cell_10"
+            android:src="@drawable/ufo"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1" />
+
+        <ImageView
+            android:contentDescription="@string/obstacle"
+            android:id="@+id/mat_cell_11"
+            android:src="@drawable/ufo"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1" />
+
+        <ImageView
+            android:contentDescription="@string/obstacle"
+            android:id="@+id/mat_cell_12"
+            android:src="@drawable/ufo"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1" />
+
+        <ImageView
+            android:contentDescription="@string/obstacle"
+            android:id="@+id/mat_cell_13"
+            android:src="@drawable/ufo"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1" />
+
+        <ImageView
+            android:contentDescription="@string/obstacle"
+            android:id="@+id/mat_cell_14"
+            android:src="@drawable/ufo"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1" />
+
+        <ImageView
+            android:contentDescription="@string/obstacle"
+            android:id="@+id/mat_cell_15"
+            android:src="@drawable/ufo"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1" />
+
+        <ImageView
+            android:contentDescription="@string/obstacle"
+            android:id="@+id/mat_cell_16"
+            android:src="@drawable/ufo"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1" />
+
+        <ImageView
+            android:contentDescription="@string/obstacle"
+            android:id="@+id/mat_cell_17"
+            android:src="@drawable/ufo"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1" />
+
+        <ImageView
+            android:contentDescription="@string/obstacle"
+            android:id="@+id/mat_cell_18"
+            android:src="@drawable/ufo"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1" />
+
+        <ImageView
+            android:contentDescription="@string/obstacle"
+            android:id="@+id/mat_cell_19"
+            android:src="@drawable/ufo"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1" />
+
+        <ImageView
+            android:contentDescription="@string/obstacle"
+            android:id="@+id/mat_cell_20"
+            android:src="@drawable/ufo"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1" />
+
+        <ImageView
+            android:contentDescription="@string/obstacle"
+            android:id="@+id/mat_cell_21"
+            android:src="@drawable/ufo"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1" />
+
+        <ImageView
+            android:contentDescription="@string/obstacle"
+            android:id="@+id/mat_cell_22"
+            android:src="@drawable/ufo"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1" />
+
+        <ImageView
+            android:contentDescription="@string/obstacle"
+            android:id="@+id/mat_cell_23"
+            android:src="@drawable/ufo"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1" />
+
+        <ImageView
+            android:contentDescription="@string/obstacle"
+            android:id="@+id/mat_cell_24"
+            android:src="@drawable/ufo"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1" />
+
+        <ImageView
+            android:contentDescription="@string/obstacle"
+            android:id="@+id/mat_cell_25"
+            android:src="@drawable/ufo"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1" />
+
+        <ImageView
+            android:contentDescription="@string/obstacle"
+            android:id="@+id/mat_cell_26"
+            android:src="@drawable/ufo"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1" />
+
+        <ImageView
+            android:contentDescription="@string/obstacle"
+            android:id="@+id/mat_cell_27"
+            android:src="@drawable/ufo"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1" />
+
+        <ImageView
+            android:contentDescription="@string/obstacle"
+            android:id="@+id/mat_cell_28"
+            android:src="@drawable/ufo"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1" />
+
+        <ImageView
+            android:contentDescription="@string/obstacle"
+            android:id="@+id/mat_cell_29"
+            android:src="@drawable/ufo"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1" />
+
+        <ImageView
+            android:contentDescription="@string/obstacle"
+            android:id="@+id/mat_cell_30"
+            android:src="@drawable/ufo"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1" />
+
+        <ImageView
+            android:contentDescription="@string/obstacle"
+            android:id="@+id/mat_cell_31"
+            android:src="@drawable/ufo"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1" />
+
+        <ImageView
+            android:contentDescription="@string/obstacle"
+            android:id="@+id/mat_cell_32"
+            android:src="@drawable/ufo"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1" />
+
+        <ImageView
+            android:contentDescription="@string/obstacle"
+            android:id="@+id/mat_cell_33"
+            android:src="@drawable/ufo"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1" />
+
+        <ImageView
+            android:contentDescription="@string/obstacle"
+            android:id="@+id/mat_cell_34"
+            android:src="@drawable/ufo"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1" />
+
+        <ImageView
+            android:contentDescription="@string/obstacle"
+            android:id="@+id/mat_cell_35"
+            android:src="@drawable/ufo"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1" />
+
+        <ImageView
+            android:contentDescription="@string/obstacle"
+            android:id="@+id/mat_cell_36"
+            android:src="@drawable/ufo"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1" />
+
+        <ImageView
+            android:contentDescription="@string/obstacle"
+            android:id="@+id/mat_cell_37"
+            android:src="@drawable/ufo"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1" />
+
+        <ImageView
+            android:contentDescription="@string/obstacle"
+            android:id="@+id/mat_cell_38"
+            android:src="@drawable/ufo"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1" />
+
+        <ImageView
+            android:contentDescription="@string/obstacle"
+            android:id="@+id/mat_cell_39"
+            android:src="@drawable/ufo"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1" />
+
+        <ImageView
+            android:contentDescription="@string/obstacle"
+            android:id="@+id/mat_cell_40"
+            android:src="@drawable/ufo"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1" />
+
+        <ImageView
+            android:contentDescription="@string/spaceship"
+            android:id="@+id/spaceship_cell_1"
+            android:src="@drawable/rocket"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_row="7"
+            android:layout_column="0"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"/>
+
+        <ImageView
+            android:contentDescription="@string/spaceship"
+            android:id="@+id/spaceship_cell_2"
+            android:src="@drawable/rocket"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_row="7"
+            android:layout_column="1"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"/>
+
+        <ImageView
+            android:contentDescription="@string/spaceship"
+            android:id="@+id/spaceship_cell_3"
+            android:src="@drawable/rocket"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_row="7"
+            android:layout_column="2"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"/>
+
+        <ImageView
+            android:contentDescription="@string/spaceship"
+            android:id="@+id/spaceship_cell_4"
+            android:src="@drawable/rocket"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_row="7"
+            android:layout_column="3"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"/>
+
+        <ImageView
+            android:contentDescription="@string/spaceship"
+            android:id="@+id/spaceship_cell_5"
+            android:src="@drawable/rocket"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_row="7"
+            android:layout_column="4"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"/>
+    </GridLayout>
+
+    <ImageButton
+        android:contentDescription="@string/move_right"
+        android:id="@+id/right_arrow_button"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:src="@drawable/arrow"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="24dp"
+        android:background="@drawable/arrow"
+        android:scaleType="fitCenter" />
+    <ImageButton
+        android:contentDescription="@string/move_left"
+        android:id="@+id/left_arrow_button"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:src="@drawable/arrow"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_margin="24dp"
+        android:background="@drawable/arrow"
+        android:scaleType="fitCenter"
+        android:scaleX="-1"/>
+
+</RelativeLayout>

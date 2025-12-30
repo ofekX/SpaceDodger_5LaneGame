@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/menu_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="64dp"
+        android:text="@string/menu_title"
+        android:textSize="32sp"
+        android:textStyle="bold" />
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/fast_switch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/menu_title"
+        android:layout_marginTop="64dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginEnd="55dp"
+        android:background="@drawable/toggle_border"
+        android:paddingVertical="24dp"
+        android:paddingHorizontal="20dp"
+        android:text="@string/fast_mode"
+        android:textColor="@color/toggle_thumb_on"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:thumbTint="@color/fast_thumb_tint"
+        app:trackTint="@color/fast_track_tint" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/start_button_mode_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/fast_switch"
+        android:layout_marginTop="120dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginEnd="55dp"
+        android:background="@drawable/toggle_border"
+        android:paddingVertical="24dp"
+        android:text="@string/start_button_mode"
+        android:textAllCaps="false"
+        android:textColor="@color/toggle_thumb_on"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/start_sensor_mode_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/start_button_mode_button"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginEnd="55dp"
+        android:background="@drawable/toggle_border"
+        android:paddingVertical="24dp"
+        android:text="@string/start_sensor_mode"
+        android:textAllCaps="false"
+        android:textColor="@color/toggle_thumb_on"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/top_ten_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/start_sensor_mode_button"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginEnd="55dp"
+        android:background="@drawable/toggle_border"
+        android:paddingVertical="24dp"
+        android:text="@string/top_ten"
+        android:textAllCaps="false"
+        android:textColor="@color/toggle_thumb_on"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+</RelativeLayout>
