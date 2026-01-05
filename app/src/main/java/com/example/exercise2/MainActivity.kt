@@ -307,12 +307,19 @@ class MainActivity : AppCompatActivity() {
         if (controlMode == "SENSOR") {
             tiltDetector?.start()
         }
+        if (!gameManager.lastWasGameOver) {
+            startGameLoop()
+        }
     }
 
     override fun onPause() {
         super.onPause()
         if (controlMode == "SENSOR") {
             tiltDetector?.stop()
+        }
+        if (timerOn) {
+            timer.cancel()
+            timerOn = false
         }
     }
 
